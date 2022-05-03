@@ -17,7 +17,7 @@ int largestSubArraySumBruteForce(int arr[], int n) {
     return sum;
 }
 
-// PrefixSum Approach O(N + N^2) = O(N)
+// PrefixSum Approach O(N + N^2) = O(N^2)
 int prefixSumApproach(int arr[], int n) {
 
     // prefix sums
