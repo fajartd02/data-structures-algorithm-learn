@@ -1,0 +1,5 @@
+left shift -> multiply
+a << b == a * pow(2, b)
+
+right shift -> divide
+a >> b == a / pow(2, b)
