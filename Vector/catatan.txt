@@ -1,0 +1,6 @@
+Cara vector dapat dynamic menambah baru insert data adalah dengan menggandakan size dari vector tersebut.
+
+push_back(data) -> o(1), terkadang o(n) saat vector full dan menggadakan dirinya, karena vector akan mengcopy sequential array sebelumnya dan disimpan di vector baru lalu baru insert data terbaru.
+
+size() -> liat ada berapa data
+capacity() -> berapa size vector

@@ -9,7 +9,7 @@ int main() {
     // Fill Constructor
     vector<int> arr(10, 7);
 
-    // Fi
+    // Fill
     vector<int> visited(100, 0);
 
     // Pop_back O(1);
