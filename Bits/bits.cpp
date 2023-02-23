@@ -28,15 +28,22 @@ void updateIthBit(int &n, int i, int v) {
 	n = (n | mask);
 }
 
+void clearLastIBits(int &n, int i) {
+	// ~0 == -1
+	int mask = ~(0) << i;
+	n = n & mask;
+}
+
 int main() {
-	int n = 5;
+	int n = 15;
 	int i;
 	cin >> i;
 
 	// cout << getIthBit(n, i) << endl;
 	// setIthBit(n, i);
 	// clearIthBit(n, i);
-	updateIthBit(n, i, 1);
+	// updateIthBit(n, i, 1);
+	clearLastIBits(n, i);
 	cout << n << endl;
 
 	return 0;
