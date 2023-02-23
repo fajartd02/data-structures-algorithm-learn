@@ -11,13 +11,19 @@ void setIthBit(int &n, int i) {
 	n = (n | mask);
 }
 
+void clearIthBit(int &n, int i) {
+	int mask = ~(1 << i);
+	n = (n & mask);
+}
+
 int main() {
 	int n = 5;
 	int i;
 	cin >> i;
 
 	// cout << getIthBit(n, i) << endl;
-	setIthBit(n, i);
+	// setIthBit(n, i);
+	clearIthBit(n, i);
 	cout << n << endl;
 
 	return 0;
