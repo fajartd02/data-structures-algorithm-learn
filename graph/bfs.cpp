@@ -30,11 +30,15 @@ public:
 		}
 	}
 
-    void bfs(int source) {
+    void bfs(int source, int destination=-1) {
         queue<int> q;
         bool *visited = new bool[V]{0};
+		int *distance = new int[V]{0};
+		int *parents = new int[V]{-1};
 
 		q.push(source);
+		distance[source] = 0;
+		parents[source] = source;
 		visited[source] = true;
 
 		while(!q.empty()) {
@@ -44,8 +48,23 @@ public:
 			for(auto node : l[f]) {
 				if(!visited[node]) {
 					q.push(node);
+					distance[node] = distance[f] + 1;
 					visited[node] = true;
+					parents[node] = f;
 				}
+			}
+
+			for(int i = 0; i < V; i++) {
+				cout << "dist to " << i << " is " << distance[i] << endl;
+			}
+
+			if(destination != -1) {	
+				long long temp = destination;
+				while(temp != source) {
+					cout << temp << " -- ";
+					temp = parents[temp];
+				}
+				cout << source << endl;
 			}
 		}
 
@@ -63,5 +82,5 @@ int main() {
     g.addEdge(4, 5);
     g.addEdge(0, 4);
     g.addEdge(3, 4);
-	g.bfs(1);
+	g.bfs(1, 6);
 }
